@@ -26,25 +26,15 @@ export class MyChart extends LitElement {
     }
   `
   render() {
-
+    let result;
     if (this.chartStatus === 'complete') {
-      console.log('c');
-      return html`
-        <div id="chart"></div>
-      `
+      result = html`<div id="chart"></div>`;
+    } else if (this.chartStatus === ('initial' || 'pending')) {
+      result = html`<p>De grafiek wordt geladen...</p>`;
+    } else {
+      result = html`<p>Er is iets fout gegaan bij het laden van de grafiek</p>`
     }
-    if (this.chartStatus === ('initial' || 'pending')) {
-      console.log('a');
-      return html`
-        <p>De grafiek wordt geladen...</p>
-      `
-    }
-    if (this.chartStatus === 'error') {
-      console.log('b');
-      return html`
-        <p>Er is iets fout gegaan bij het laden van de grafiek</p>
-      `
-    }
+    return result;
   }
 
   async firstUpdated() {
@@ -69,8 +59,6 @@ export class MyChart extends LitElement {
     await this.updateComplete;
     Highcharts.chart(this.chartElement, this.chartConfig);
   }
-
-
 }
 
 declare global {
