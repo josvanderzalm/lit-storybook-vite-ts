@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit App</title>
+    <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/my-gauge.ts"></script>
+    <script type="module" src="/src/my-info-card.ts"></script>
+    <script type="module" src="/src/my-chart.ts"></script>
+  </head>
+  <body>
+    <my-chart src="./config.json"></my-chart>
+<hr />
+    <my-info-card 
+      icon="arrow-trend-up"
+      title="1,25" 
+      description="Verschil in % deelnemers met covid-achtige symptomen tussen de afgelopen twee weken"
+      ></my-info-card>
+
+    <my-info-card 
+      icon="pencil"
+      title="9532" 
+      description="Aantal deelnemers die een vragenlijst hebben ingevuld in de afgelopen week"
+      ></my-info-card>
+
+    <my-info-card 
+      icon="medal"
+      title="1,25" 
+      description="Meeste vragenlijsten ingevuld door één deelnemer sinds begin infectieradar"
+      ></my-info-card>
+
+    <my-info-card 
+      icon="people-group"
+      title="Utrecht" 
+      description="Provincie met de meeste infectieradar deelnemers"
+      ></my-info-card>
+
+    <my-element>
+      <p>This is child content</p>
+    </my-element>
+
+    <my-gauge value="25" position="25" unit="%" title="Voorbeeld meter">25% van de deelnemers is het eens met de stelling</my-gauge>
+    
+    <my-gauge value="50" position="50" unit="%" title="Voorbeeld meter"></my-gauge>
+    
+    <my-gauge value="75" position="75" unit="%" title="Voorbeeld meter"></my-gauge>
+    
+    <my-gauge value="100" position="100" unit="%" title="Voorbeeld meter"></my-gauge>
+
+  </body>
+</html>
